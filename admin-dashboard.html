@@ -1,0 +1,816 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Административная панель | МейкСэнс - Современная платформа для онлайн обучения</title>
+    <meta name="description" content="Административная панель платформы МейкСэнс">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader__spinner"></div>
+        <h2 class="preloader__text">МейкСэнс</h2>
+    </div>
+    
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <svg class="logo__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#00a34b"/>
+                    <path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="logo__text">МейкСэнс</span>
+            </a>
+            
+            <div class="header__title">Административная панель</div>
+            
+            <div class="header__right">
+                <button class="mobile-menu-toggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="user-menu">
+                    <div class="user-menu__trigger">
+                        <img src="images/avatar.jpg" alt="Администратор" class="user-menu__avatar">
+                        <span class="user-menu__name">Администратор</span>
+                        <svg class="user-menu__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="user-menu__dropdown">
+                        <a href="admin-dashboard.html" class="user-menu__link user-menu__link--active">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Админ панель</span>
+                        </a>
+                        <a href="index.html" class="user-menu__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Выйти</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="admin-dashboard">
+        <div class="container admin-dashboard__container">
+            <!-- Боковое меню -->
+            <aside class="sidebar">
+                <nav class="sidebar__nav">
+                    <ul class="sidebar__menu">
+                        <li class="sidebar__menu-item">
+                            <a href="#" class="sidebar__menu-link sidebar__menu-link--active" data-section="users">
+                                <svg class="sidebar__menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M23 21V19C22.9949 17.1871 21.8625 15.5835 20.1 15.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 3.13C17.7704 3.61113 19 5.21437 19 7.00005C19 8.78573 17.7704 10.389 16 10.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Пользователи</span>
+                            </a>
+                        </li>
+                        <li class="sidebar__menu-item">
+                            <a href="#" class="sidebar__menu-link" data-section="courses">
+                                <svg class="sidebar__menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Курсы</span>
+                            </a>
+                        </li>
+                        <li class="sidebar__menu-item">
+                            <a href="#" class="sidebar__menu-link" data-section="create-course">
+                                <svg class="sidebar__menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Создать курс</span>
+                            </a>
+                        </li>
+                        <li class="sidebar__menu-item sidebar__menu-item--divider">
+                            <a href="index.html" class="sidebar__menu-link sidebar__menu-link--exit">
+                                <svg class="sidebar__menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Выйти</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <!-- Основной контент -->
+            <div class="admin-content">
+                <!-- Раздел "Пользователи" -->
+                <section class="admin-section active" id="users">
+                    <div class="admin-section__header">
+                        <h1 class="admin-section__title">Пользователи</h1>
+                        <div class="admin-section__tools">
+                            <div class="search-bar">
+                                <input type="text" class="search-bar__input" id="userSearchInput" placeholder="Поиск пользователей...">
+                                <button class="search-bar__button" aria-label="Искать">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table" id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" data-sort="name">Имя и фамилия</th>
+                                    <th class="sortable" data-sort="email">Email <span class="sort-icon"></span></th>
+                                    <th class="sortable" data-sort="role">Роль <span class="sort-icon"></span></th>
+                                    <th class="sortable" data-sort="date">Дата регистрации <span class="sort-icon"></span></th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/avatar.jpg" alt="Иван Петров" class="user-info__avatar">
+                                            <span class="user-info__name">Иван Петров</span>
+                                        </div>
+                                    </td>
+                                    <td>ivan.petrov@example.com</td>
+                                    <td><span class="badge badge--blue">Ученик</span></td>
+                                    <td>01.03.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-user-btn" data-user-id="1" aria-label="Удалить пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/avatar.jpg" alt="Александр Иванов" class="user-info__avatar">
+                                            <span class="user-info__name">Александр Иванов</span>
+                                        </div>
+                                    </td>
+                                    <td>alex.ivanov@example.com</td>
+                                    <td><span class="badge badge--green">Преподаватель</span></td>
+                                    <td>15.02.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-user-btn" data-user-id="2" aria-label="Удалить пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/avatar.jpg" alt="Анна Смирнова" class="user-info__avatar">
+                                            <span class="user-info__name">Анна Смирнова</span>
+                                        </div>
+                                    </td>
+                                    <td>anna.smirnova@example.com</td>
+                                    <td><span class="badge badge--blue">Ученик</span></td>
+                                    <td>20.03.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-user-btn" data-user-id="3" aria-label="Удалить пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/avatar.jpg" alt="Елена Кузнецова" class="user-info__avatar">
+                                            <span class="user-info__name">Елена Кузнецова</span>
+                                        </div>
+                                    </td>
+                                    <td>elena.kuznetsova@example.com</td>
+                                    <td><span class="badge badge--green">Преподаватель</span></td>
+                                    <td>05.04.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-user-btn" data-user-id="4" aria-label="Удалить пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="images/avatar.jpg" alt="Дмитрий Соколов" class="user-info__avatar">
+                                            <span class="user-info__name">Дмитрий Соколов</span>
+                                        </div>
+                                    </td>
+                                    <td>dmitry.sokolov@example.com</td>
+                                    <td><span class="badge badge--blue">Ученик</span></td>
+                                    <td>10.04.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-user-btn" data-user-id="5" aria-label="Удалить пользователя">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination__button pagination__button--prev" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Предыдущая</span>
+                        </button>
+                        <div class="pagination__pages">
+                            <button class="pagination__page pagination__page--active">1</button>
+                            <button class="pagination__page">2</button>
+                            <button class="pagination__page">3</button>
+                        </div>
+                        <button class="pagination__button pagination__button--next">
+                            <span>Следующая</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Раздел "Курсы" -->
+                <section class="admin-section" id="courses">
+                    <div class="admin-section__header">
+                        <h1 class="admin-section__title">Курсы</h1>
+                        <div class="admin-section__tools">
+                            <div class="search-bar">
+                                <input type="text" class="search-bar__input" id="courseSearchInput" placeholder="Поиск по курсам...">
+                                <button class="search-bar__button" aria-label="Искать">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" data-sort="course">Название курса <span class="sort-icon">↓</span></th>
+                                    <th class="sortable" data-sort="teacher">Преподаватель <span class="sort-icon"></span></th>
+                                    <th class="sortable" data-sort="students">Ученики <span class="sort-icon"></span></th>
+                                    <th class="sortable" data-sort="date">Дата создания <span class="sort-icon"></span></th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="course-info">
+                                            <img src="images/course-javascript.jpg" alt="JavaScript для начинающих" class="course-info__image">
+                                            <div class="course-info__details">
+                                                <span class="course-info__title">JavaScript для начинающих</span>
+                                                <span class="course-info__category">Разработка</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Александр Иванов</td>
+                                    <td>120</td>
+                                    <td>15.01.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Просмотреть курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-course-btn" data-course-id="1" aria-label="Удалить курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="course-info">
+                                            <img src="images/course-html-css.jpg" alt="HTML и CSS с нуля" class="course-info__image">
+                                            <div class="course-info__details">
+                                                <span class="course-info__title">HTML и CSS с нуля</span>
+                                                <span class="course-info__category">Разработка</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Александр Иванов</td>
+                                    <td>85</td>
+                                    <td>10.02.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Просмотреть курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-course-btn" data-course-id="2" aria-label="Удалить курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="course-info">
+                                            <img src="images/course-figma.jpg" alt="Основы дизайна в Figma" class="course-info__image">
+                                            <div class="course-info__details">
+                                                <span class="course-info__title">Основы дизайна в Figma</span>
+                                                <span class="course-info__category">Дизайн</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Елена Кузнецова</td>
+                                    <td>68</td>
+                                    <td>05.03.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Просмотреть курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-course-btn" data-course-id="3" aria-label="Удалить курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="course-info">
+                                            <img src="images/course-marketing.jpg" alt="Digital-маркетинг" class="course-info__image">
+                                            <div class="course-info__details">
+                                                <span class="course-info__title">Digital-маркетинг: полный курс</span>
+                                                <span class="course-info__category">Маркетинг</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Дмитрий Волков</td>
+                                    <td>92</td>
+                                    <td>15.03.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Просмотреть курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-course-btn" data-course-id="4" aria-label="Удалить курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="course-info">
+                                            <img src="images/course-python.jpg" alt="Python для анализа данных" class="course-info__image">
+                                            <div class="course-info__details">
+                                                <span class="course-info__title">Python для анализа данных</span>
+                                                <span class="course-info__category">Разработка</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Михаил Петров</td>
+                                    <td>75</td>
+                                    <td>25.03.2023</td>
+                                    <td>
+                                        <div class="actions">
+                                            <button class="btn btn--icon btn--sm" aria-label="Просмотреть курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm" aria-label="Редактировать курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M18.5 2.5C18.8978 2.10217 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10217 21.5 2.5C21.8978 2.89782 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10217 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn--icon btn--sm btn--danger delete-course-btn" data-course-id="5" aria-label="Удалить курс">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination__button pagination__button--prev" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Предыдущая</span>
+                        </button>
+                        <div class="pagination__pages">
+                            <button class="pagination__page pagination__page--active">1</button>
+                            <button class="pagination__page">2</button>
+                        </div>
+                        <button class="pagination__button pagination__button--next">
+                            <span>Следующая</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Раздел "Создать курс" (идентичен из кабинета преподавателя) -->
+                <section class="admin-section" id="create-course">
+                    <div class="admin-section__header">
+                        <h1 class="admin-section__title">Создать курс</h1>
+                    </div>
+                    
+                    <form id="courseForm" class="course-form">
+                        <input type="hidden" id="courseId" value="">
+                        
+                        <!-- Основные параметры курса -->
+                        <div class="form-section">
+                            <h3 class="form-section__title">Основные параметры</h3>
+                            
+                            <div class="upload-image">
+                                <div class="upload-image__preview" id="courseImagePreview">
+                                    <svg class="upload-image__placeholder" width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <img id="uploadedImage" style="display: none;" alt="Изображение курса">
+                                </div>
+                                <div class="upload-image__controls">
+                                    <label for="courseImage" class="btn btn--outline btn--sm">Загрузить изображение</label>
+                                    <input type="file" id="courseImage" name="courseImage" accept="image/*" style="display: none;">
+                                    <p class="upload-image__hint">Рекомендуемый размер: 1280×720 пикселей</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="courseTitle" class="form-label">Название курса <span class="required">*</span></label>
+                                <input type="text" id="courseTitle" name="courseTitle" class="form-input" required>
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="courseShortDescription" class="form-label">Краткое описание <span class="required">*</span></label>
+                                <input type="text" id="courseShortDescription" name="courseShortDescription" class="form-input" maxlength="100" required>
+                                <div class="form-hint">Максимум 10 слов или 100 символов</div>
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="courseFullDescription" class="form-label">Полное описание <span class="required">*</span></label>
+                                <textarea id="courseFullDescription" name="courseFullDescription" class="form-textarea" rows="5" required></textarea>
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="courseTeacher" class="form-label">Категория <span class="required">*</span></label>
+                                <select id="courseTeacher" name="courseTeacher" class="form-select" required>
+                                    <option value="">Выберите категорию</option>
+                                    <option value="1">Разработка</option>
+                                    <option value="2">Дизайн</option>
+                                    <option value="3">Бизнес</option>
+                                </select>
+                                <div class="form-error"></div>
+                            </div>
+							
+						    <div class="form-group">
+                                <label for="courseTeacher" class="form-label">Преподаватель <span class="required">*</span></label>
+                                <select id="courseTeacher" name="courseTeacher" class="form-select" required>
+                                    <option value="">Выберите преподавателя</option>
+                                    <option value="1">Александр Иванов</option>
+                                    <option value="2">Елена Кузнецова</option>
+                                    <option value="3">Михаил Петров</option>
+                                </select>
+                                <div class="form-error"></div>
+                            </div>
+							
+                        </div>
+
+                        <!-- Уроки курса -->
+                        <div class="form-section">
+                            <h3 class="form-section__title">Уроки курса</h3>
+                            <div id="lessonsContainer">
+                                <!-- Здесь будут добавляться уроки через JavaScript -->
+                            </div>
+                            <button type="button" class="btn btn--outline btn--icon" id="addLessonBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Добавить урок</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Тест для курса -->
+                        <div class="form-section">
+                            <h3 class="form-section__title">Тест для курса</h3>
+                            <div id="testQuestionsContainer">
+                                <!-- Здесь будут добавляться вопросы теста через JavaScript -->
+                            </div>
+                            <button type="button" class="btn btn--outline btn--icon" id="addQuestionBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Добавить вопрос</span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn--ghost" id="cancelCourseBtn">Отменить</button>
+                            <button type="submit" class="btn btn--primary">Сохранить курс</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Модальное окно для подтверждения удаления пользователя -->
+    <div class="modal" id="deleteUserModal">
+        <div class="modal__container modal__container--sm">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="modal__content">
+                <h2 class="modal__title">Удаление пользователя</h2>
+                <p class="confirm-text">Вы действительно хотите удалить пользователя "<span id="deleteUserName"></span>"? Это действие нельзя отменить.</p>
+                <div class="form-actions">
+                    <button type="button" class="btn btn--ghost cancel-delete-btn">Отменить</button>
+                    <button type="button" class="btn btn--danger confirm-delete-btn" id="confirmDeleteUserBtn">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для подтверждения удаления курса -->
+    <div class="modal" id="deleteCourseModal">
+        <div class="modal__container modal__container--sm">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="modal__content">
+                <h2 class="modal__title">Удаление курса</h2>
+                <p class="confirm-text">Вы действительно хотите удалить курс "<span id="deleteCourseName"></span>"? Это действие нельзя отменить.</p>
+                <div class="form-actions">
+                    <button type="button" class="btn btn--ghost cancel-delete-btn">Отменить</button>
+                    <button type="button" class="btn btn--danger confirm-delete-btn" id="confirmDeleteCourseBtn">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Оверлей для модальных окон -->
+    <div class="modal-overlay"></div>
+    
+    <!-- Минималистичный подвал -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <div class="minimal-footer__content">
+                <div class="minimal-footer__copyright">© 2025 МейкСэнс. Все права защищены.</div>
+                <div class="minimal-footer__links">
+                    <a href="index.html" class="minimal-footer__link">Главная</a>
+                    <a href="#" class="minimal-footer__link">Помощь</a>
+                    <a href="#" class="minimal-footer__link">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Шаблон для урока (будет использоваться в JavaScript) -->
+    <template id="lessonTemplate">
+        <div class="lesson-item">
+            <div class="lesson-header">
+                <h4 class="lesson-title">Урок <span class="lesson-number"></span></h4>
+                <div class="lesson-actions">
+                    <button type="button" class="btn btn--icon btn--sm btn--outline toggle-lesson-btn" aria-label="Свернуть/развернуть урок">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn--icon btn--sm btn--outline delete-lesson-btn" aria-label="Удалить урок">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="form-group">
+                    <label class="form-label">Название урока <span class="required">*</span></label>
+                    <input type="text" name="lessonTitle[]" class="form-input" required>
+                    <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Видео урока (ссылка с YouTube) <span class="required">*</span></label>
+                    <input type="url" name="lessonVideo[]" class="form-input" placeholder="https://www.youtube.com/embed/..." required>
+                    <div class="form-hint">Используйте ссылку вида https://www.youtube.com/embed/YOUR_VIDEO_ID</div>
+                    <div class="form-error"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Содержание урока <span class="required">*</span></label>
+                    <textarea name="lessonContent[]" class="form-textarea" rows="5" required></textarea>
+                    <div class="form-error"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <!-- Шаблон для вопроса теста (будет использоваться в JavaScript) -->
+    <template id="questionTemplate">
+        <div class="question-item">
+            <div class="question-header">
+                <h4 class="question-title">Вопрос <span class="question-number"></span></h4>
+                <div class="question-actions">
+                    <button type="button" class="btn btn--icon btn--sm btn--outline toggle-question-btn" aria-label="Свернуть/развернуть вопрос">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn--icon btn--sm btn--outline delete-question-btn" aria-label="Удалить вопрос">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6H5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="form-group">
+                    <label class="form-label">Текст вопроса <span class="required">*</span></label>
+                    <input type="text" name="questionText[]" class="form-input" required>
+                    <div class="form-error"></div>
+                </div>
+                <div class="options-container">
+                    <div class="form-group">
+                        <label class="form-label">Варианты ответа <span class="required">*</span></label>
+                        <div class="option-group">
+                            <div class="option-input">
+                                <input type="radio" name="correctOption_{{index}}" value="1" class="option-radio" required>
+                                <input type="text" name="option1_{{index}}" class="form-input" placeholder="Вариант 1" required>
+                            </div>
+                            <div class="form-error"></div>
+                        </div>
+                        <div class="option-group">
+                            <div class="option-input">
+                                <input type="radio" name="correctOption_{{index}}" value="2" class="option-radio" required>
+                                <input type="text" name="option2_{{index}}" class="form-input" placeholder="Вариант 2" required>
+                            </div>
+                            <div class="form-error"></div>
+                        </div>
+                        <div class="option-group">
+                            <div class="option-input">
+                                <input type="radio" name="correctOption_{{index}}" value="3" class="option-radio" required>
+                                <input type="text" name="option3_{{index}}" class="form-input" placeholder="Вариант 3" required>
+                            </div>
+                            <div class="form-error"></div>
+                        </div>
+                        <div class="option-group">
+                            <div class="option-input">
+                                <input type="radio" name="correctOption_{{index}}" value="4" class="option-radio" required>
+                                <input type="text" name="option4_{{index}}" class="form-input" placeholder="Вариант 4" required>
+                            </div>
+                            <div class="form-error"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <script src="js/script.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

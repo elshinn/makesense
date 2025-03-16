@@ -1,0 +1,769 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МейкСэнс - Современная платформа для онлайн обучения</title>
+    <meta name="description" content="МейкСэнс - инновационная платформа для онлайн обучения, объединяющая учителей и учеников">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader__spinner"></div>
+        <h2 class="preloader__text">МейкСэнс</h2>
+    </div>
+    
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <svg class="logo__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#00a34b"/>
+                    <path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="logo__text">МейкСэнс</span>
+            </a>
+            
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                    <li class="nav__item"><a href="#courses" class="nav__link">Курсы</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <button class="btn btn--ghost login-btn">Войти</button>
+                <button class="btn btn--primary register-btn">Регистрация</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Героический блок -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title animate-in">Образование, которое имеет смысл</h1>
+                    <p class="hero__subtitle animate-in">Персонализированное обучение с использованием современных технологий</p>
+                    <div class="hero__buttons animate-in">
+                        <a href="#courses" class="btn btn--primary btn--lg">Начать обучение</a>
+                        <a href="#features" class="btn btn--ghost btn--lg">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="hero__image animate-in">
+                    <img src="images/hero-image.jpg" alt="Онлайн обучение" class="parallax-element">
+                </div>
+            </div>
+            <div class="hero__shapes">
+                <div class="shape shape--1"></div>
+                <div class="shape shape--2"></div>
+                <div class="shape shape--3"></div>
+            </div>
+        </section>
+        
+        <!-- Преимущества -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title animate-in">Почему выбирают МейкСэнс</h2>
+                <div class="features__grid">
+                    <div class="feature-card animate-in">
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#E6F7EE"/>
+                                <path d="M24 15V33" stroke="#00a34b" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M15 24H33" stroke="#00a34b" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Персонализированный подход</h3>
+                        <p class="feature-card__text">Адаптивная система обучения, учитывающая индивидуальные особенности каждого ученика</p>
+                    </div>
+                    
+                    <div class="feature-card animate-in">
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#E6F7EE"/>
+                                <path d="M16 24L22 30L32 18" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Высокое качество материалов</h3>
+                        <p class="feature-card__text">Тщательно подобранный контент от экспертов в своей области</p>
+                    </div>
+                    
+                    <div class="feature-card animate-in">
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#E6F7EE"/>
+                                <path d="M24 16V24L28 28" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="24" cy="24" r="10" stroke="#00a34b" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Гибкий график обучения</h3>
+                        <p class="feature-card__text">Учитесь в удобное время и в своем темпе</p>
+                    </div>
+                    
+                    <div class="feature-card animate-in">
+                        <div class="feature-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#E6F7EE"/>
+                                <path d="M18 30L24 24L30 30" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 22L24 16L30 22" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-card__title">Интерактивные технологии</h3>
+                        <p class="feature-card__text">Современные методики для эффективного усвоения знаний</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Статистика -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats__grid">
+                    <div class="stat-card animate-in">
+                        <div class="stat-card__number" data-count="100">0</div>
+                        <div class="stat-card__label">Курсов</div>
+                    </div>
+                    <div class="stat-card animate-in">
+                        <div class="stat-card__number" data-count="10000">0</div>
+                        <div class="stat-card__label">Студентов</div>
+                    </div>
+                    <div class="stat-card animate-in">
+                        <div class="stat-card__number" data-count="50">0</div>
+                        <div class="stat-card__label">Преподавателей</div>
+                    </div>
+                    <div class="stat-card animate-in">
+                        <div class="stat-card__number" data-count="95">0</div>
+                        <div class="stat-card__label">% Успешных выпускников</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Как это работает -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title animate-in">Как работает наша платформа</h2>
+                <div class="steps">
+                    <div class="step animate-in">
+                        <div class="step__number">1</div>
+                        <h3 class="step__title">Регистрация</h3>
+                        <p class="step__text">Создайте аккаунт, выбрав свою роль в системе</p>
+                    </div>
+                    <div class="step-connector animate-in"></div>
+                    <div class="step animate-in">
+                        <div class="step__number">2</div>
+                        <h3 class="step__title">Выбор курса</h3>
+                        <p class="step__text">Найдите подходящий курс в нашем каталоге</p>
+                    </div>
+                    <div class="step-connector animate-in"></div>
+                    <div class="step animate-in">
+                        <div class="step__number">3</div>
+                        <h3 class="step__title">Обучение</h3>
+                        <p class="step__text">Изучайте материалы и выполняйте задания</p>
+                    </div>
+                    <div class="step-connector animate-in"></div>
+                    <div class="step animate-in">
+                        <div class="step__number">4</div>
+                        <h3 class="step__title">Сертификация</h3>
+                        <p class="step__text">Получите сертификат о прохождении курса</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Отзывы -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title animate-in">Отзывы наших студентов</h2>
+                <div class="testimonials__carousel">
+                    <div class="testimonial-card active animate-in">
+                        <div class="testimonial-card__content">
+                            <p class="testimonial-card__text">"МейкСэнс полностью изменил мой подход к обучению. Благодаря платформе я смог получить новую специальность и найти работу мечты."</p>
+                        </div>
+                        <div class="testimonial-card__author">
+                            <img src="images/testimonial-3.jpg" alt="Александр" class="testimonial-card__avatar" loading="lazy">
+                            <div class="testimonial-card__info">
+                                <div class="testimonial-card__name">Александр Петров</div>
+                                <div class="testimonial-card__position">Веб-разработчик</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-in">
+                        <div class="testimonial-card__content">
+                            <p class="testimonial-card__text">"Удобный интерфейс и понятная подача материала. Преподаватели всегда готовы помочь и ответить на вопросы. Рекомендую!"</p>
+                        </div>
+                        <div class="testimonial-card__author">
+                            <img src="images/testimonial-2.jpg" alt="Елена" class="testimonial-card__avatar" loading="lazy">
+                            <div class="testimonial-card__info">
+                                <div class="testimonial-card__name">Елена Сидорова</div>
+                                <div class="testimonial-card__position">Маркетолог</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-in">
+                        <div class="testimonial-card__content">
+                            <p class="testimonial-card__text">"Гибкий график обучения позволил мне совмещать работу и учебу. Отличная платформа для профессионального развития."</p>
+                        </div>
+                        <div class="testimonial-card__author">
+                            <img src="images/testimonial-1.jpg" alt="Дмитрий" class="testimonial-card__avatar" loading="lazy">
+                            <div class="testimonial-card__info">
+                                <div class="testimonial-card__name">Дмитрий Кузнецов</div>
+                                <div class="testimonial-card__position">Проджект-менеджер</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-arrow carousel-prev" aria-label="Предыдущий отзыв">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" aria-label="Отзыв 1"></button>
+                        <button class="carousel-dot" aria-label="Отзыв 2"></button>
+                        <button class="carousel-dot" aria-label="Отзыв 3"></button>
+                    </div>
+                    <button class="carousel-arrow carousel-next" aria-label="Следующий отзыв">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Каталог курсов -->
+        <section class="courses" id="courses">
+            <div class="container">
+                <h2 class="section-title animate-in">Популярные курсы</h2>
+                <div class="courses-filters animate-in">
+                    <button class="filter-btn active" data-filter="all">Все курсы</button>
+                    <button class="filter-btn" data-filter="development">Разработка</button>
+                    <button class="filter-btn" data-filter="design">Дизайн</button>
+                    <button class="filter-btn" data-filter="marketing">Маркетинг</button>
+                    <button class="filter-btn" data-filter="business">Бизнес</button>
+                </div>
+                <div class="courses__grid">
+                    <div class="course-card animate-in" data-category="development">
+                        <div class="course-card__image">
+                            <img src="images/course-javascript.jpg" alt="JavaScript для начинающих" loading="lazy">
+                            <div class="course-card__badge">Популярный</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Начальный</span>
+                                <span class="course-card__duration">8 недель</span>
+                            </div>
+                            <h3 class="course-card__title">JavaScript для начинающих</h3>
+                            <p class="course-card__description">Научитесь основам программирования на самом популярном языке для web-разработки</p>
+                            <div class="course-card__footer">
+                                <div class="course-card__rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="count">4.8 (120)</span>
+                                </div>
+                                <div class="course-card__price">12 000 ₽</div>
+                            </div>
+                        </div>
+                        <a href="#" class="course-card__link"></a>
+                    </div>
+                    
+                    <div class="course-card animate-in" data-category="design">
+                        <div class="course-card__image">
+                            <img src="images/course-ux.jpg" alt="UI/UX Дизайн" loading="lazy">
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Средний</span>
+                                <span class="course-card__duration">10 недель</span>
+                            </div>
+                            <h3 class="course-card__title">UI/UX Дизайн с нуля до PRO</h3>
+                            <p class="course-card__description">Освойте современные инструменты дизайна и создавайте привлекательные интерфейсы</p>
+                            <div class="course-card__footer">
+                                <div class="course-card__rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="count">4.6 (85)</span>
+                                </div>
+                                <div class="course-card__price">15 000 ₽</div>
+                            </div>
+                        </div>
+                        <a href="#" class="course-card__link"></a>
+                    </div>
+                    
+                    <div class="course-card animate-in" data-category="marketing">
+                        <div class="course-card__image">
+                            <img src="images/course-marketing.jpg" alt="Digital-маркетинг" loading="lazy">
+                            <div class="course-card__badge">Новый</div>
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Начальный</span>
+                                <span class="course-card__duration">6 недель</span>
+                            </div>
+                            <h3 class="course-card__title">Digital-маркетинг: полный курс</h3>
+                            <p class="course-card__description">Изучите основы цифрового маркетинга и стратегии продвижения в интернете</p>
+                            <div class="course-card__footer">
+                                <div class="course-card__rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="count">4.7 (64)</span>
+                                </div>
+                                <div class="course-card__price">10 000 ₽</div>
+                            </div>
+                        </div>
+                        <a href="#" class="course-card__link"></a>
+                    </div>
+                    
+                    <div class="course-card animate-in" data-category="business">
+                        <div class="course-card__image">
+                            <img src="images/course-agile.jpg" alt="Управление проектами" loading="lazy">
+                        </div>
+                        <div class="course-card__content">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Продвинутый</span>
+                                <span class="course-card__duration">12 недель</span>
+                            </div>
+                            <h3 class="course-card__title">Управление проектами по методологии Agile</h3>
+                            <p class="course-card__description">Освойте современные подходы к управлению IT-проектами в гибкой методологии</p>
+                            <div class="course-card__footer">
+                                <div class="course-card__rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="count">4.9 (42)</span>
+                                </div>
+                                <div class="course-card__price">18 000 ₽</div>
+                            </div>
+                        </div>
+                        <a href="#" class="course-card__link"></a>
+                    </div>
+                </div>
+                <div class="courses__cta animate-in">
+                    <a href="catalog.html" class="btn btn--primary">Смотреть все курсы</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Секция -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title animate-in">Часто задаваемые вопросы</h2>
+                <div class="accordion">
+                    <div class="accordion__item animate-in">
+                        <button class="accordion__header">
+                            <span>Как начать обучение на платформе?</span>
+                            <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Для начала обучения необходимо зарегистрироваться на платформе, выбрать интересующий курс и оплатить его. После этого вы получите доступ к материалам курса и сможете приступить к обучению.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item animate-in">
+                        <button class="accordion__header">
+                            <span>Какие форматы обучения доступны?</span>
+                            <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion__content">
+                            <p>На нашей платформе доступны различные форматы обучения: видеолекции, интерактивные задания, тесты, практические проекты, групповые дискуссии и индивидуальные консультации с преподавателями.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item animate-in">
+                        <button class="accordion__header">
+                            <span>Могу ли я получить сертификат после завершения курса?</span>
+                            <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Да, после успешного завершения курса и выполнения всех необходимых заданий вы получите официальный сертификат о прохождении обучения, который можно добавить в резюме или портфолио.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item animate-in">
+                        <button class="accordion__header">
+                            <span>Как стать преподавателем на платформе?</span>
+                            <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Для того чтобы стать преподавателем, необходимо заполнить заявку на нашем сайте, предоставить информацию о своем опыте и компетенциях, а также пройти собеседование с нашей командой. Мы тщательно отбираем преподавателей, чтобы обеспечить высокое качество обучения.</p>
+                        </div>
+                    </div>
+                    <div class="accordion__item animate-in">
+                        <button class="accordion__header">
+                            <span>Можно ли получить доступ к курсу после его завершения?</span>
+                            <svg class="accordion__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Да, после завершения курса вы сохраняете доступ к его материалам на протяжении 1 года. Это позволяет возвращаться к изученным темам и закреплять полученные знания.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- О компании -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title animate-in">О компании МейкСэнс</h2>
+                <div class="about__content">
+                    <div class="about__text animate-in">
+                        <p class="about__paragraph">МейкСэнс — это современная образовательная платформа, основанная группой профессионалов в области образования и IT-технологий.</p>
+                        <p class="about__paragraph">Наша миссия — сделать качественное образование доступным для каждого, независимо от местоположения и графика. Мы верим, что обучение должно быть интересным, эффективным и адаптированным под индивидуальные потребности каждого ученика.</p>
+                        <p class="about__paragraph">За время работы платформы мы собрали команду из лучших преподавателей-практиков, разработали уникальные методики обучения и помогли тысячам студентов достичь своих целей.</p>
+                    </div>
+                    <div class="about__image animate-in">
+                        <img src="images/about-team.jpg" alt="Команда МейкСэнс" loading="lazy">
+                    </div>
+                </div>
+                
+           
+            </div>
+        </section>
+        
+        <!-- Контакты -->
+        <section class="contacts" id="contacts">
+            <div class="container">
+                <h2 class="section-title animate-in">Связаться с нами</h2>
+                <div class="contacts__content">
+                    <div class="contacts__info animate-in">
+                        <div class="contact-card">
+                            <div class="contact-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-card__title">Адрес</h3>
+                            <p class="contact-card__text">ул. Примерная, 123, Москва</p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7294C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77383 17.3147 6.72534 15.2662 5.19 12.85C3.49998 10.2412 2.44824 7.27097 2.12 4.18C2.09501 3.90363 2.12788 3.62486 2.21649 3.36172C2.3051 3.09859 2.4475 2.85679 2.63476 2.65172C2.82201 2.44665 3.05014 2.28281 3.30421 2.17062C3.55829 2.05843 3.83313 2.00036 4.11 2H7.11C7.59531 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04208 3.23945 9.11 3.72C9.23651 4.68007 9.47141 5.62273 9.81 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.36 8.64L8.09 9.91C9.51356 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7635 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-card__title">Телефон</h3>
+                            <p class="contact-card__text">+7 (495) 123-45-67</p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 6L12 13L2 6" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-card__title">Email</h3>
+                            <p class="contact-card__text">info@makesense.ru</p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 8V12L15 15" stroke="#00a34b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="12" r="9" stroke="#00a34b" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact-card__title">Режим работы</h3>
+                            <p class="contact-card__text">Пн-Пт: 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacts__form animate-in">
+                        <form class="contact-form">
+                            <h3 class="contact-form__title">Напишите нам</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName" class="form-label">Ваше имя</label>
+                                    <input type="text" id="contactName" class="form-input" placeholder="Введите ваше имя" required>
+                                    <div class="form-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail" class="form-label">Email</label>
+                                    <input type="email" id="contactEmail" class="form-input" placeholder="Введите ваш email" required>
+                                    <div class="form-error"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">Тема</label>
+                                <input type="text" id="contactSubject" class="form-input" placeholder="Введите тему сообщения" required>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">Сообщение</label>
+                                <textarea id="contactMessage" class="form-input" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+                                <div class="form-error"></div>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full">Отправить сообщение</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="contacts__map animate-in">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.3846569058706!2d37.617619915887574!3d55.7539560805457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1655455284744!5m2!1sru!2sru" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content animate-in">
+                    <h2 class="cta__title">Готовы начать обучение?</h2>
+                    <p class="cta__text">Присоединяйтесь к тысячам студентов, которые уже изменили свою жизнь с МейкСэнс</p>
+                    <div class="cta__buttons">
+                        <button class="btn btn--primary btn--lg register-btn-cta">Начать бесплатно</button>
+                        <a href="#courses" class="btn btn--ghost btn--lg">Смотреть курсы</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__info">
+                    <a href="index.html" class="logo logo--white">
+                        <svg class="logo__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="#00a34b"/>
+                            <path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="logo__text">МейкСэнс</span>
+                    </a>
+                    <p class="footer__description">Современная платформа для онлайн обучения, объединяющая учителей и учеников</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 3.28445C14.0247 3.61171 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5932 15.1514 13.8416 15.5297C13.0901 15.9079 12.2385 16.0396 11.4078 15.9059C10.5771 15.7723 9.80977 15.3801 9.21485 14.7852C8.61993 14.1902 8.22774 13.4229 8.09408 12.5922C7.96042 11.7615 8.09208 10.9099 8.47034 10.1584C8.8486 9.40685 9.4542 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8387 5.15941C21.498 4.80824 21.0708 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.92925 4.59318 2.50198 4.84824 2.16135 5.19941C1.82072 5.55057 1.5788 5.98541 1.46 6.46C1.14521 8.20556 0.991235 9.97631 1 11.75C0.988687 13.537 1.14266 15.3213 1.46 17.08C1.59096 17.5398 1.83831 17.9581 2.17814 18.2945C2.51798 18.6308 2.93882 18.8738 3.4 19C5.12 19.46 12 19.46 12 19.46C12 19.46 18.88 19.46 20.6 19C21.0708 18.8668 21.498 18.6118 21.8387 18.2606C22.1793 17.9094 22.4212 17.4746 22.54 17C22.8524 15.2676 22.9945 13.5103 23 11.75C23.0113 9.96295 22.8573 8.1787 22.54 6.42Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.47998V15.02Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__heading">Навигация</h3>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Главная</a></li>
+                        <li><a href="#courses" class="footer__link">Курсы</a></li>
+                        <li><a href="#about" class="footer__link">О нас</a></li>
+                        <li><a href="#contacts" class="footer__link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__heading">Курсы</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Программирование</a></li>
+                        <li><a href="#" class="footer__link">Дизайн</a></li>
+                        <li><a href="#" class="footer__link">Маркетинг</a></li>
+                        <li><a href="#" class="footer__link">Бизнес</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__heading">Поддержка</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Помощь</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                        <li><a href="#" class="footer__link">Условия использования</a></li>
+                        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__heading">Связаться с нами</h3>
+                    <address class="footer__address">
+                        <p>ул. Примерная, 123, Москва</p>
+                        <p>Email: <a href="mailto:info@makesense.ru">info@makesense.ru</a></p>
+                        <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 МейкСэнс. Все права защищены.</p>
+                <button class="back-to-top" aria-label="Вернуться наверх">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Модальное окно Вход -->
+    <div class="modal" id="loginModal">
+        <div class="modal__container">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="modal__content">
+                <h2 class="modal__title">Вход в аккаунт</h2>
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" id="loginEmail" class="form-input" placeholder="Введите email" required>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword" class="form-label">Пароль</label>
+                        <div class="password-input">
+                            <input type="password" id="loginPassword" class="form-input" placeholder="Введите пароль" required>
+                            <button type="button" class="password-toggle" aria-label="Показать пароль">
+                                <svg class="eye-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-options">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="rememberMe" class="checkbox">
+                            <label for="rememberMe">Запомнить меня</label>
+                        </div>
+                        <a href="#" class="form-link forgot-password">Забыли пароль?</a>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Войти</button>
+                </form>
+                <p class="auth-redirect">
+                    Нет аккаунта? <a href="#" class="show-register">Зарегистрироваться</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно Регистрация -->
+    <div class="modal" id="registerModal">
+        <div class="modal__container">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="modal__content">
+                <h2 class="modal__title">Регистрация</h2>
+                <div class="register-tabs">
+                    <button class="register-tab active" data-tab="student">Ученик</button>
+                    <button class="register-tab" data-tab="teacher">Преподаватель</button>
+                </div>
+                <form class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName" class="form-label">Имя и фамилия</label>
+                        <input type="text" id="registerName" class="form-input" placeholder="Введите имя и фамилию" required>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" id="registerEmail" class="form-input" placeholder="Введите email" required>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword" class="form-label">Пароль</label>
+                        <div class="password-input">
+                            <input type="password" id="registerPassword" class="form-input" placeholder="Введите пароль" required>
+                            <button type="button" class="password-toggle" aria-label="Показать пароль">
+                                <svg class="eye-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="password-strength__bar"></div>
+                            <div class="password-strength__label">Надежность пароля</div>
+                        </div>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPasswordConfirm" class="form-label">Подтверждение пароля</label>
+                        <div class="password-input">
+                            <input type="password" id="registerPasswordConfirm" class="form-input" placeholder="Повторите пароль" required>
+                            <button type="button" class="password-toggle" aria-label="Показать пароль">
+                                <svg class="eye-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group teacher-fields" style="display: none;">
+                        <label for="teacherSpecialization" class="form-label">Специализация</label>
+                        <input type="text" id="teacherSpecialization" class="form-input" placeholder="Введите вашу специализацию">
+                        <div class="form-error"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">Зарегистрироваться</button>
+                </form>
+                <p class="auth-redirect">
+                    Уже есть аккаунт? <a href="#" class="show-login">Войти</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Уведомление -->
+    <div class="toast" id="toast">
+        <div class="toast__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="toast__content">
+            <div class="toast__title">Уведомление</div>
+            <div class="toast__message">Текст уведомления</div>
+        </div>
+        <button class="toast__close" aria-label="Закрыть">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Итоговый тест: JavaScript для начинающих | МейкСэнс - Современная платформа для онлайн обучения</title>
+    <meta name="description" content="Тестирование по курсу JavaScript для начинающих на платформе МейкСэнс">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader__spinner"></div>
+        <h2 class="preloader__text">МейкСэнс</h2>
+    </div>
+    
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <svg class="logo__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#00a34b"/>
+                    <path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="logo__text">МейкСэнс</span>
+            </a>
+            
+            <div class="header__right">
+                
+                <div class="user-menu">
+                    <div class="user-menu__trigger">
+                        <img src="images/avatar.jpg" alt="Аватар пользователя" class="user-menu__avatar">
+                        <span class="user-menu__name">Иван Петров</span>
+                        <svg class="user-menu__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="user-menu__dropdown">
+                        <a href="student-dashboard.html" class="user-menu__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Личный кабинет</span>
+                        </a>
+                        <a href="index.html" class="user-menu__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Выйти</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="test-container">
+        <div class="container">
+            <!-- Верхняя часть -->
+            <div class="test-header">
+                <div class="test-header__back">
+                    <a href="student-learning.html" class="btn btn--ghost btn--icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Вернуться к курсу</span>
+                    </a>
+                </div>
+                <h1 class="test-header__title">Итоговый тест по курсу «JavaScript для начинающих»</h1>
+                <div class="test-header__info">
+                    <div class="test-header__info-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Проходной балл: 80%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Блок с тестом -->
+            <div class="test-content">
+                <!-- Блок вопроса (будет меняться через JavaScript) -->
+                <div class="question-container" id="questionContainer">
+                    <div class="question">
+                        <h2 class="question__number">Вопрос <span id="currentQuestionNumber">1</span> из <span id="totalQuestions">10</span></h2>
+                        <p class="question__text" id="questionText">В чем отличие между операторами == и === в JavaScript?</p>
+                        
+                        <div class="question__options" id="optionsContainer">
+                            <!-- Варианты ответов будут добавлены через JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Навигационная панель -->
+                <div class="test-navigation">
+                    <div class="test-navigation__indicators" id="questionIndicators">
+                        <!-- Индикаторы вопросов будут добавлены через JavaScript -->
+                    </div>
+                    
+                    <div class="test-navigation__controls">
+                        <button class="btn btn--ghost" id="prevBtn" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Предыдущий</span>
+                        </button>
+                        
+                        <button class="btn btn--primary" id="nextBtn">
+                            <span>Следующий</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="btn btn--success" id="finishBtn" disabled>Завершить тест</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Блок результатов (изначально скрыт) -->
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <h2 class="results-container__title">Результаты теста</h2>
+                
+                <div class="results-chart">
+                    <div class="results-chart__circle">
+                        <svg width="200" height="200" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#e6e6e6" stroke-width="12"/>
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#00a34b" stroke-width="12" stroke-dasharray="565.5" stroke-dashoffset="0" id="resultCircle"/>
+                        </svg>
+                        <div class="results-chart__percentage" id="resultPercentage">85%</div>
+                    </div>
+                </div>
+                
+                <div class="results-details">
+                    <div class="results-details__item">
+                        <span class="results-details__label">Правильных ответов:</span>
+                        <span class="results-details__value" id="correctAnswers">8</span>
+                    </div>
+                    <div class="results-details__item">
+                        <span class="results-details__label">Всего вопросов:</span>
+                        <span class="results-details__value" id="totalQuestionsResult">10</span>
+                    </div>
+                    <div class="results-details__item">
+                        <span class="results-details__label">Результат:</span>
+                        <span class="results-details__value results-details__value--success" id="resultStatus">Тест пройден</span>
+                    </div>
+                </div>
+                
+                <div class="results-actions">
+                    <a href="student-learning.html" class="btn btn--ghost">Вернуться к курсу</a>
+                    <a href="student-dashboard.html" class="btn btn--primary">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Минималистичный футер -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <div class="minimal-footer__content">
+                <div class="minimal-footer__copyright">© 2025 МейкСэнс. Все права защищены.</div>
+                <div class="minimal-footer__links">
+                    <a href="index.html" class="minimal-footer__link">Главная</a>
+                    <a href="#" class="minimal-footer__link">Помощь</a>
+                    <a href="#" class="minimal-footer__link">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script src="js/test.js"></script>
+</body>
+</html>

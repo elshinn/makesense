@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript для начинающих: Урок 1 | МейкСэнс - Современная платформа для онлайн обучения</title>
+    <meta name="description" content="Изучение курса JavaScript для начинающих на платформе МейкСэнс">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/learning.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader__spinner"></div>
+        <h2 class="preloader__text">МейкСэнс</h2>
+    </div>
+    
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <svg class="logo__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#00a34b"/>
+                    <path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="logo__text">МейкСэнс</span>
+            </a>
+            
+            <div class="header__right">
+                <button class="sidebar-toggle" aria-label="Показать/скрыть содержание курса">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="course-title">JavaScript для начинающих</div>
+                
+                <div class="user-menu">
+                    <div class="user-menu__trigger">
+                        <img src="images/avatar.jpg" alt="Аватар пользователя" class="user-menu__avatar">
+                        <span class="user-menu__name">Иван Петров</span>
+                        <svg class="user-menu__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="user-menu__dropdown">
+                        <a href="student-dashboard.html" class="user-menu__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Личный кабинет</span>
+                        </a>
+                        <a href="index.html" class="user-menu__link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Выйти</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="learning-container">
+        <div class="container">
+            <div class="learning-wrapper">
+                <!-- Левая колонка - Содержание курса -->
+                <aside class="course-sidebar">
+                    <div class="course-sidebar__header">
+                        <h2 class="course-sidebar__title">Содержание курса</h2>
+                        <button class="course-sidebar__close" aria-label="Закрыть содержание">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="course-progress">
+                        <div class="course-progress__text">Прогресс курса: <span id="progressPercent">35%</span></div>
+                        <div class="course-progress__bar">
+                            <div class="course-progress__fill" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    
+                    <nav class="course-navigation">
+                        <div class="course-module">
+                            <div class="course-module__header">
+                                <h3 class="course-module__title">Модуль 1: Введение в JavaScript</h3>
+                                <svg class="course-module__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <ul class="course-module__lessons">
+                                <li class="course-module__lesson course-module__lesson--active" data-lesson-id="1">
+                                    <span class="course-module__lesson-number">1</span>
+                                    <span class="course-module__lesson-title">История JavaScript и его роль в веб-разработке</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="course-module__lesson" data-lesson-id="2">
+                                    <span class="course-module__lesson-number">2</span>
+                                    <span class="course-module__lesson-title">Настройка рабочего окружения</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="course-module__lesson" data-lesson-id="3">
+                                    <span class="course-module__lesson-number">3</span>
+                                    <span class="course-module__lesson-title">Первая программа на JavaScript</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="course-module">
+                            <div class="course-module__header">
+                                <h3 class="course-module__title">Модуль 2: Основы синтаксиса</h3>
+                                <svg class="course-module__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <ul class="course-module__lessons">
+                                <li class="course-module__lesson" data-lesson-id="4">
+                                    <span class="course-module__lesson-number">4</span>
+                                    <span class="course-module__lesson-title">Переменные и типы данных</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="course-module__lesson" data-lesson-id="5">
+                                    <span class="course-module__lesson-number">5</span>
+                                    <span class="course-module__lesson-title">Операторы и выражения</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="course-module__lesson" data-lesson-id="6">
+                                    <span class="course-module__lesson-number">6</span>
+                                    <span class="course-module__lesson-title">Условные конструкции</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="course-module">
+                            <div class="course-module__header">
+                                <h3 class="course-module__title">Модуль 3: Функции и объекты</h3>
+                                <svg class="course-module__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <ul class="course-module__lessons">
+                                <li class="course-module__lesson" data-lesson-id="7">
+                                    <span class="course-module__lesson-number">7</span>
+                                    <span class="course-module__lesson-title">Основы функций</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="course-module__lesson" data-lesson-id="8">
+                                    <span class="course-module__lesson-number">8</span>
+                                    <span class="course-module__lesson-title">Создание и использование объектов</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="course-module__lesson" data-lesson-id="9">
+                                    <span class="course-module__lesson-number">9</span>
+                                    <span class="course-module__lesson-title">Массивы и их методы</span>
+                                    <span class="course-module__lesson-status">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </aside>
+                
+                <!-- Правая колонка - Основной контент -->
+                <main class="learning-content">
+                    <div class="learning-header">
+                        <div class="learning-header__back">
+                            <a href="student-dashboard.html" class="btn btn--ghost btn--icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Личный кабинет</span>
+                            </a>
+                        </div>
+                        <h1 class="learning-header__title">История JavaScript и его роль в веб-разработке</h1>
+                    </div>
+                    
+                    <div class="video-container">
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-152990965&id=456239540&hd=1" width="816" height="459" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="learning-tabs">
+                        <button class="learning-tabs__tab learning-tabs__tab--active" data-tab="content">Содержание урока</button>
+                    </div>
+                    
+                    <div class="learning-tab-content" id="content">
+                        <article class="lesson-content">
+                            <h2 class="lesson-content__title">История создания JavaScript</h2>
+                            
+                            <p class="lesson-content__text">JavaScript был создан Бренданом Эйхом за 10 дней в мае 1995 года, когда он работал в компании Netscape. Первоначально язык назывался Mocha, затем LiveScript, и, наконец, был переименован в JavaScript, что было маркетинговым ходом, чтобы воспользоваться популярностью языка Java, хотя эти два языка имеют очень мало общего.</p>
+                            
+                            <p class="lesson-content__text">JavaScript был разработан как язык сценариев для Netscape Navigator, чтобы сделать веб-страницы более интерактивными. До его появления веб-страницы были статичными, и для любых изменений на странице требовалась перезагрузка всей страницы с сервера.</p>
+                            
+                            <h2 class="lesson-content__title">Эволюция JavaScript</h2>
+                            
+                            <p class="lesson-content__text">С момента создания JavaScript прошел значительный путь развития:</p>
+                            
+                            <ul class="lesson-content__list">
+                                <li><strong>1997:</strong> JavaScript был стандартизирован Европейской ассоциацией производителей компьютеров (ECMA) как ECMAScript.</li>
+                                <li><strong>1999:</strong> Выпуск ECMAScript 3, который стал основой современного JavaScript.</li>
+                                <li><strong>2009:</strong> Выпуск ECMAScript 5 с множеством улучшений и новых функций.</li>
+                                <li><strong>2015:</strong> Выпуск ECMAScript 6 (ES6/ES2015) — наиболее значительное обновление языка, добавившее классы, модули, стрелочные функции, промисы и многое другое.</li>
+                                <li><strong>2016-настоящее время:</strong> Ежегодные обновления ECMAScript с новыми функциями и улучшениями.</li>
+                            </ul>
+                            
+                            <div class="lesson-content__note">
+                                <div class="lesson-content__note-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="lesson-content__note-text">
+                                    <p>Важно различать JavaScript и Java — это два совершенно разных языка программирования, несмотря на схожесть в названиях. Java — это объектно-ориентированный язык программирования, разработанный компанией Sun Microsystems (сейчас принадлежит Oracle), в то время как JavaScript — это язык сценариев, изначально созданный для работы в браузере.</p>
+                                </div>
+                            </div>
+                            
+                            <h2 class="lesson-content__title">Роль JavaScript в современной веб-разработке</h2>
+                            
+                            <p class="lesson-content__text">Сегодня JavaScript является одним из самых популярных языков программирования в мире и имеет следующие ключевые роли:</p>
+                            
+                            <ol class="lesson-content__list">
+                                <li><strong>Клиентская веб-разработка:</strong> JavaScript позволяет создавать интерактивные и динамические веб-страницы, реагирующие на действия пользователя без перезагрузки страницы.</li>
+                                <li><strong>Серверная разработка:</strong> С появлением Node.js, JavaScript теперь используется и на серверной стороне, что позволяет разработчикам использовать один язык как для клиентской, так и для серверной части.</li>
+                                <li><strong>Мобильная разработка:</strong> Фреймворки, такие как React Native и Ionic, позволяют использовать JavaScript для создания нативных мобильных приложений.</li>
+                                <li><strong>Десктопные приложения:</strong> Electron позволяет создавать кроссплатформенные приложения для рабочего стола с использованием веб-технологий.</li>
+                                <li><strong>Интернет вещей (IoT):</strong> JavaScript используется для программирования устройств интернета вещей.</li>
+                            </ol>          
+                            
+                            <h2 class="lesson-content__title">Преимущества JavaScript</h2>
+                            
+                            <ul class="lesson-content__list">
+                                <li>Универсальность и возможность использования во всех сферах разработки.</li>
+                                <li>Низкий порог входа для начинающих разработчиков.</li>
+                                <li>Огромное сообщество и множество ресурсов для обучения.</li>
+                                <li>Богатая экосистема библиотек и фреймворков (React, Angular, Vue, Express и т.д.).</li>
+                                <li>Постоянное развитие языка с ежегодными обновлениями.</li>
+                            </ul>
+                            
+                            <h2 class="lesson-content__title">Заключение</h2>
+                            
+                            <p class="lesson-content__text">JavaScript прошел долгий путь от простого языка сценариев до одного из самых популярных и мощных языков программирования в мире. Его способность работать как на клиентской, так и на серверной стороне делает его незаменимым инструментом в арсенале современного веб-разработчика.</p>
+                            
+                            <p class="lesson-content__text">В следующем уроке мы рассмотрим, как настроить рабочее окружение для разработки на JavaScript и напишем нашу первую программу.</p>
+                        </article>
+                    </div>
+                    
+                    <div class="learning-footer">
+                        <div class="learning-footer__progress">
+                            <div class="learning-footer__progress-text">Урок 1 из 9</div>
+                            <div class="learning-footer__progress-bar">
+                                <div class="learning-footer__progress-fill" style="width: 11%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="learning-footer__actions">
+                            <button class="btn btn--primary btn--lg learning-footer__next" id="nextLessonBtn">
+                                <span>Следующий урок</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Минималистичный футер -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <div class="minimal-footer__content">
+                <div class="minimal-footer__copyright">© 2025 МейкСэнс. Все права защищены.</div>
+                <div class="minimal-footer__links">
+                    <a href="index.html" class="minimal-footer__link">Главная</a>
+                    <a href="#" class="minimal-footer__link">Помощь</a>
+                    <a href="#" class="minimal-footer__link">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script src="js/learning.js"></script>
+</body>
+</html>
