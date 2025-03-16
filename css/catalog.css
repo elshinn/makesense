@@ -1,0 +1,572 @@
+﻿/* Стили для страницы каталога курсов */
+/* Баннер каталога */
+.catalog-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    padding: calc(var(--spacing-3xl) + 60px) 0 var(--spacing-2xl);
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.catalog-banner__title {
+    color: var(--color-white);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--spacing-md);
+}
+
+.catalog-banner__subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Фильтры и поиск */
+.catalog-filters {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.catalog-filters__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+}
+
+.search-box__input {
+    width: 100%;
+    padding: 0.875rem var(--spacing-lg);
+    padding-right: 3rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.search-box__input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 163, 75, 0.1);
+    outline: none;
+}
+
+.search-box__button {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    color: var(--color-gray-500);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.search-box__button:hover {
+    color: var(--color-primary);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    min-width: 160px;
+}
+
+.dropdown__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.875rem var(--spacing-lg);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    color: var(--color-gray-700);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dropdown__button:hover {
+    border-color: var(--color-gray-400);
+}
+
+.dropdown__button svg {
+    margin-left: var(--spacing-sm);
+    transition: transform var(--transition-fast);
+}
+
+.dropdown.active .dropdown__button svg {
+    transform: rotate(180deg);
+}
+
+.dropdown__content {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: var(--z-index-dropdown);
+    padding: var(--spacing-sm) 0;
+    display: none;
+}
+
+.dropdown.active .dropdown__content {
+    display: block;
+    animation: fadeInDown 0.2s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown__item {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.dropdown__item:hover {
+    background-color: var(--color-gray-100);
+}
+
+.dropdown__item input[type="checkbox"] {
+    margin-right: var(--spacing-sm);
+    accent-color: var(--color-primary);
+}
+
+.dropdown__item label {
+    cursor: pointer;
+    flex: 1;
+}
+
+.sort-dropdown__select {
+    appearance: none;
+    padding: 0.875rem var(--spacing-lg);
+    padding-right: 2.5rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    color: var(--color-gray-700);
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9L12 15 18 9'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.sort-dropdown__select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 163, 75, 0.1);
+    outline: none;
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md) 0;
+}
+
+.active-filters__label {
+    font-weight: 500;
+    color: var(--color-gray-700);
+}
+
+.active-filters__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    flex: 1;
+}
+
+.active-filters__item {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.875rem;
+}
+
+.active-filters__remove {
+    margin-left: 0.25rem;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--color-primary);
+    transition: background-color var(--transition-fast);
+}
+
+.active-filters__remove:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.active-filters__clear {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    padding: 0.25rem 0.5rem;
+}
+
+.active-filters__clear:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+/* Каталог курсов */
+.catalog__results {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+}
+
+.catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Карточка курса */
+.course-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.course-card__image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.course-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.course-card:hover .course-card__image img {
+    transform: scale(1.05);
+}
+
+.course-card__badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.course-card__content {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+}
+
+.course-card__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.75rem;
+}
+
+.course-card__category {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.course-card__level {
+    color: var(--color-gray-600);
+}
+
+.course-card__title {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+    color: var(--color-gray-900);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-card__description {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.course-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.course-card__rating {
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    color: var(--color-warning);
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.count {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    margin-top: 2px;
+}
+
+.course-card__price {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.course-card__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.course-card__button {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+}
+
+/* Пустое состояние */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.empty-state__image {
+    width: 200px;
+    height: auto;
+    margin-bottom: var(--spacing-xl);
+}
+
+.empty-state__title {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-700);
+}
+
+.empty-state__text {
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-gray-500);
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pagination__button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    color: var(--color-gray-700);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pagination__button:hover:not(:disabled) {
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-400);
+}
+
+.pagination__button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.pagination__page {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    color: var(--color-gray-700);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pagination__page:hover {
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-400);
+}
+
+.pagination__page--active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+/* Исправление стиля активной страницы при наведении */
+.pagination__page--active:hover {
+    background-color: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    border-color: var(--color-primary) !important;
+}
+
+
+.pagination__ellipsis {
+    margin: 0 0.25rem;
+    color: var(--color-gray-500);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+    .catalog__grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-filters__wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .filter-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .dropdown, .sort-dropdown {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .catalog__grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .catalog__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-filters {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .pagination__pages {
+        gap: 0;
+    }
+    
+    .pagination__page {
+        min-width: 36px;
+        height: 36px;
+    }
+    
+    .pagination__button {
+        width: 36px;
+        height: 36px;
+    }
+}
